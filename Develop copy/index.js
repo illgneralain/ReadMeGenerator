@@ -34,8 +34,8 @@ inquirer.prompt(
             message: 'what license did you use?',
             name: 'license',
             choices: ['The MIT License', 'The GPL License', 'Apache license', 'GNU license', 'N/A'],
-            validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}},
-        }
+            validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}}
+        },
     ]
 )
 // TODO: Create an array of questions for user input
