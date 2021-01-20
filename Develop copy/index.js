@@ -25,8 +25,15 @@ inquirer.prompt(
         },
         {
             type: 'input',
-            message: 'how?',
-            name: 'installation',
+            message: 'how do you use your app?',
+            name: 'usage',
+            validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}},
+        },
+        {
+            type: 'list',
+            message: 'what license did you use?',
+            name: 'license',
+            choices: ['The MIT License', 'The GPL License', 'Apache license', 'GNU license', 'N/A'],
             validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}},
         }
     ]
