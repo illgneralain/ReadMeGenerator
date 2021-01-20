@@ -92,13 +92,19 @@ ${license}
 * Github :${git}
 * E-mail :${email}`;
 }
-)
+);
 // TODO: Create an array of questions for user input
 const questions = [];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
+// TODO: Create a function to write README file
+function writeToFile(fileName, data){
+fs.writeFile(`./${fileName.toLowerCase().split(' ').join(' ')}.md`,data, () =>{
+if(err){
+    console.log(err)
+}
+
+})
 // TODO: Create a function to initialize app
 function init() {}
 
