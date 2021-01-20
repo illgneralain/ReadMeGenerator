@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { type } = require('os');
+const { title, cpuUsage } = require('process');
 
 inquirer.prompt(
     [
@@ -21,6 +22,12 @@ inquirer.prompt(
             type: 'input',
             message = "instructions to be followed?",
             name: 'instructions',
+            validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}},
+        },
+        {
+            type: 'input',
+            message = "any credits?",
+            name: 'installation',
             validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}},
         },
         {
@@ -49,7 +56,43 @@ inquirer.prompt(
             validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}}
         },  
     ]
-).then
+).then(({
+    title,
+    installation,
+    instructions,
+    credits,
+    license,
+    git,
+    email,
+    usage,
+    contribution
+})=>{
+
+const template = `# ${title}
+
+* [instal(lation](#installation)
+* [usage])#usage)
+* [contribution](#contribution)
+* [credits](#credits)
+* [license](#license)
+* installation
+${installation}
+## usage
+${usage}
+## contribution
+${contribution}
+### instrutions 
+${instructions}
+## credits
+${credit}
+## license
+${license}
+
+# Contact
+* Github :${git}
+* E-mail :${email}`;
+}
+)
 // TODO: Create an array of questions for user input
 const questions = [];
 
