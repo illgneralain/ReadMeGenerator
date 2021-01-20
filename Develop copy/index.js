@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { type } = require('os');
 
 inquirer.prompt(
     [
@@ -8,8 +9,13 @@ inquirer.prompt(
             type: 'input',
             message = "What's the project title?",
             name: 'title',
-            validate: (value)=>( if(value)return true) else (return 'I need a value to continue')),
+            validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}},
         },
+        {
+            type: 'input',
+            message: 'how do you install your app?',
+            name
+        }
     ]
 )
 // TODO: Create an array of questions for user input
