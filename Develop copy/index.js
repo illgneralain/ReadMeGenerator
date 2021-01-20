@@ -15,6 +15,17 @@ inquirer.prompt(
             type: 'input',
             message: 'how do you install your app?',
             name: 'installation',
+        },
+        {
+            type: 'input',
+            message = "What's the project title?",
+            name: 'title',
+            validate: (value)=>{ if(value){return true} else {return 'I need a value to continue'}},
+        },
+        {
+            type: 'input',
+            message: 'how do you install your app?',
+            name: 'installation',
         }
     ]
 )
