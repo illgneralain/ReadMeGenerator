@@ -1,6 +1,17 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+inquirer.prompt(
+    [
+        {
+            type: 'input',
+            message = "What's the project title?",
+            name: 'title',
+            validate: (value)=>( if(value)return true) else (return 'I need a value to continue')),
+        },
+    ]
+)
 // TODO: Create an array of questions for user input
 const questions = [];
 
