@@ -14,7 +14,7 @@ inquirer.prompt(
         {
             type: 'input',
             message: 'how do you install your app?',
-            name
+            name: 'installation',
         }
     ]
 )
