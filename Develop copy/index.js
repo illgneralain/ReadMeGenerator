@@ -103,8 +103,10 @@ fs.writeFile(`./${fileName.toLowerCase().split(' ').join(' ')}.md`,data, () =>{
 if(err){
     console.log(err)
 }
+console.log('Your README has been generted');
 
 })
+}
 // TODO: Create a function to initialize app
 function init() {}
 
